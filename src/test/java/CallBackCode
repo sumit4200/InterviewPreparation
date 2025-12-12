@@ -1,0 +1,76 @@
+
+//coder's gyan se karle
+https://www.youtube.com/watch?v=c-0P67cxTbI
+
+function websiteLaunch()
+{
+    return new Promise((resolve,reject)=>{
+
+        setTimeout(()=>{
+            console.log(" 1) Website www.google.com Launched");
+           return resolve("ok");
+         },1000);
+     
+
+    })
+    
+ 
+}
+
+function sendEmails()
+{
+    return new Promise((resolve,reject)=>{
+
+        setTimeout(()=>{
+            console.log("2) All emails send to client");
+            resolve("ok");
+           },6000)
+
+    })
+   
+}
+
+function clearDatabase()
+{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+
+            console.log("3) Database cleared");
+            resolve("ok");
+        
+          },3000)
+    
+    })
+  
+}
+
+function callApisEnd()
+{
+  
+    return new Promise((resolve,reject)=>{
+
+        setTimeout(()=>{
+
+        
+            console.log("4) All API's are called at end");
+            resolve("ok");
+    
+        },1000);
+
+    })
+    
+}
+
+async function exec()
+{
+  await  callApisEnd();
+    await sendEmails();
+  await  websiteLaunch();
+    
+   await clearDatabase();  //ye synchronous code ban gya
+   console.log("fdfdf");  //ye phle se hi synchronous code hai(console.log) ,buy upar se await htadia
+   //to wo asynchronous nature hjyga aage badh jyga turant
+ 
+}
+    exec();
+ 

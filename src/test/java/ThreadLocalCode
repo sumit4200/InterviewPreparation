@@ -1,0 +1,44 @@
+✅ 1. ThreadLocal Driver Utility Class
+ 
+public class DriverFactory {
+    private static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
+
+    public static WebDriver getDriver() {
+        return tlDriver.get();
+    }
+
+    public static void setDriver(WebDriver driver) {
+        tlDriver.set(driver);
+    }
+
+    public static void unload() {
+        tlDriver.remove();
+    }
+}
+✅ 2. Base Test Setup
+ 
+public class BaseTest {
+
+    @BeforeMethod
+    public void setup() {
+        WebDriver driver = new ChromeDriver();  // or use WebDriverManager
+        DriverFactory.setDriver(driver);
+        DriverFactory.getDriver().manage().window().maximize();
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        DriverFactory.getDriver().quit();
+        DriverFactory.unload();
+    }
+}
+✅ 3. Sample Test Class
+
+public class SampleTest extends BaseTest {
+
+    @Test
+    public void testGoogle() {
+        DriverFactory.getDriver().get("https://google.com");
+        System.out.println(DriverFactory.getDriver().getTitle());
+    }
+}

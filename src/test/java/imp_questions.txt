@@ -1,0 +1,356 @@
+jiii//Find third largest number in array java in O(n)
+//String s = "I am java developer I am proud of it" -> isme if(arr[j].equals(arr[i]) ayega kuki strin ha ,
+character me ascii compare hjyga no issue but string me .equals()
+// Quick sort ,bubble sort ,merge sort which is best ye puchte hai
+//OLD QUES
+1) LCM,HCF
+2) DECIMAL TO BINARY ,BINARY TO DECIMAL 
+3) Find all factors of a number,prime ,composite
+4) Sort array of 0,1,2 in O(n) ADOBE INTERVIEW
+5) Read - write File Java : https://www.geeksforgeeks.org/file-handling-java-using-filewriter-filereader/
+
+👉max-consecutive-ones in array leetcode
+👉 Streams Interview Questions
+
+👉👉👉👉👉👉 Find the last non repeating character in string
+
+//NEW ONE
+1 ) Split a String into a Number of Substrings in Java
+2) LCS , 2 SUM , 3 SUM , Factorial of very large number , pascal triangle
+2) What is method hiding in java ,can we overload static method he explained well
+2) Determine a number is even or odd without using modulus operator , _ ,+,*,divide 
+3) Kth largest and smallest element in an array
+4) Longest common subsequence in array
+5) Roman To Integers
+6) Find missing and repeating number
+6) Singleton class(Testing world_Naveen) and do selenium me kaise implement karege from naveen too important
+7). Given a #string with lower case, upper case and special characters, the resultant string should have the count of #character with each character separately.
+
+Example: aaaAAab^B&bbc$cC%ca*aDdDd@bB
+
+output: a6b4c4a2d4b2
+
+>> These questions can be asked too, just like aabbc, a2b2c1, however, what I have mentioned is the latest #interview question.
+
+//output: a6b4c4a2d4b2
+        
+            String s1 = "a2b3c4p14z2";
+            StringBuilder output = new StringBuilder();
+            
+            Pattern pattern = Pattern.compile("([a-zA-Z])(\\d+)");
+            Matcher matcher = pattern.matcher(s1);
+            
+            while (matcher.find()) {
+                char letter = matcher.group(1).charAt(0);
+                int count = Integer.parseInt(matcher.group(2));
+                for (int i = 0; i < count; i++) {
+                    output.append(letter);
+                }
+            }
+            
+            System.out.println(output.toString()); // Output: aabbbccccjjjjjjjjjjjzz
+        }
+***Print only 3 digit number ,2 digit number from string or both
+
+
+          String inputString = "32a2b38c4p14777z675m988pp66p34";
+
+            // Regular expression to match only two-digit numbers
+            String regex =  "(?<!\\d)\\d{3}(?!\\d)";
+
+            // Compile the regular expression pattern
+            Pattern pattern = Pattern.compile(regex);
+
+            // Create a Matcher object to find matches in the input string
+            Matcher matcher = pattern.matcher(inputString);
+
+            // Iterate through the matches and print them
+            System.out.println("Two-digit numbers found:");
+            while (matcher.find()) {
+                System.out.println(matcher.group());
+            }
+
+####******** \\d vs \\d+ *******##### try with \\s vs \\s+
+
+String myString1 = "__1_6____3__6_345____0";
+
+         String regex1 = "\\d";
+         String replacement1 = "x";
+          String newString1 = myString1.replaceAll(regex1, replacement1);
+         System.out.println(newString1);
+        // __x_x____x__x_x____x
+
+
+         
+         String myString = "__1_6____3__6_345____0";
+
+          String regex = "\\d+";
+          String replacement = "x";
+           String newString = myString.replaceAll(regex, replacement);
+          System.out.println(newString);
+         // __x_x____x__x_x____x
+
+***** ye dekh important ******
+
+String url = "13,456.98";
+        String k = url.replaceAll("\\.", "");
+        System.out.println(k);
+        
+        String url2 = "1345,6.98";
+        String k2 = url2.replaceAll(".", "");
+        System.out.println(k2);//will print empty string
+
+
+5) Multithreading ki starting ki 6 videos karlo enough hai more than basic idea hona chye
+
+6) How to reverse a negative number already did twice ,use ,bhar txt file me code dia ha
+
+public class Main {
+    public static void main(String[] args) {
+        int number = Integer.parseInt(args[0]); // Get the number from command line argument
+        if (isEven(number)) {
+            System.out.println("The number is even.");
+        } else {
+            System.out.println("The number is odd.");
+        }
+    }
+
+    public static boolean isEven(int num) {
+        return ((num & 1) == 0);
+    }
+}
+** --> Read and Write Files In Java
+3) Bhai pattern programs karle pascal triangle ,alphabets wale it can confuse you
+4) selenium broken links ,database connection code ratt lo ****
+5) Naveen Automation se interview Questions kar
+
+// count pair with given sum  important
+//alternate small and capital letters in a string // striver wala chal jyga isme 
+//print small letter at start and capital at end //striver chal jyga baki dusra bhi chaljyga 
+////Even numbers at even index and odd numbers at odd index
+//two string anagram
+//two string rotation of each other
+//Check strings are Isomorphic or not
+// n/3 Majority element II
+// n/2 Majority element
+//permutations
+// union intersection of teo sorted arrays //phle sort kalro O(n logn) then do good hai
+//reverse each individual word string stack use kar  : https://www.geeksforgeeks.org/reverse-individual-words/
+//Given a string Sumit Goyal Is A Good Boy  sort each word in ascending or descending order good question
+// Reverse a string preserving positions
+//Reverse a string without affecting special characters
+//Make first letter captital for a given String : Sumit Goyal Is A Good Boy
+
+//kadens algo
+//rotate array by one
+//rotate string by 2
+//reverse first and last character of a string
+//reverse first and last letter ya fir reverse last and first digit of a number(youtube se miljyga)
+//two array are rotation of each other
+// array final value once its rotated k time ,means just print value not rotate
+//array rotation by d positions
+//recursion print fibonacci 
+//recursion factorial 
+//recursion permmutations
+//recursion reverse a number
+public int reverse(int num) {
+    // Base case: if the number is single digit or 0, return the number itself
+    if (num < 10 && num >= 0) {
+        return num;
+    }
+    // Recursively reverse the number
+    return reverse(num / 10) * 10 + num % 10;
+}
+
+https://www.linkedin.com/feed/update/urn:li:activity:7159232080365723648?utm_source=share&utm_medium=member_desktop
+// How many string objects will be created : ye jo naveen ne linkedin par post kia tha dekh le
+// linkedin par share kia hu post
+// https://www.linkedin.com/posts/naveenkhunteta_quiz2-what-will-the-output-of-the-given-ugcPost-7120041014148419584-WPHv?utm_source=share&utm_medium=member_android
+//add two complex numbers
+//Reverse a negative number program already in github
+//hashMap me se smallest and largest _ already uploaded in arrays section using streams
+// add two numbers without using + operator , also do for multiply ,divide
+// different ways to swap a number
+// add two binary numbers (most Imp)
+//Fibonacci
+// mere two arrays in java
+//add two complex numbers  2+3i
+//LCM_HCF wala
+//Given a string rotate it to left or right by d places ,array oncept use
+//missing number
+//majority element
+//kaden's algorithm
+//factorial of very largeNo
+//maximum consecutive 1's in array striver
+//minimum rotations required to get same string
+//lcm_hcf
+//add two binary number(Imp)
+//different ways to swap two numbers
+//all permutations of a string
+//prime_composite_numbers
+//print_All_factors
+//find the largest value from array ,ye try kar normal method se
+//Find leaders in array
+//Find repeating and missing number(striver DSA)
+//Majority element n/2 striver karlia using HashMap
+// Find element that appears once in an array while  every other element appears twice
+// swap two strings ,naveen automation important
+// Important : Rearrange an array in order smallest,largest ,second_smallest,second_largest amd so on...
+// Move even numbers to left and odd to right preserving position or simple both tarike
+// move all 0 to left and all 1 to right
+// Appears once in array wala
+//Given an array of integers, sort the first half of the array in ascending order and second half in descending order.
+//insertion,deletion array
+//print 1 to 100 without loop
+//print your name 100 times without using any numbers
+//Print your name 1000 times without using any loop in Java
+//How to use Collections.reverseOrder() on IntegerArray,(sort array in descending order in short)
+
+// Given a string sumit is a good boy ,print largest length element from string,if multiple print first
+String s = "sumit sum123456 a good boy123456";
+        String element = "";
+        String[]arr = s.split(" ");
+        int largest = arr[0].length();
+        for(int i=1;i<arr.length;++i)
+        {
+            if(largest<=arr[i].length())
+            {
+                largest = arr[i].length();
+                element=arr[i];
+            }
+        }
+        System.out.print(largest);
+        System.out.print(element);
+
+
+
+//selenium Interview
+** Handle authentication popup herokuapp kaise hga ? **
+1) Broken links find , also how we can test in parallel using parallelstream important naveen channel me video ha
+2) DB connection ratt lo
+3) Check element presence  rahul arora
+4) which design patterns you used : pageObject and singleton Pattern  : Testing world channel se kar singleton pattern
+5) ThreadLocal use dekh ke karna ho agar
+6) xpath me . lagate hai parent child relatiomship 
+7) Read data from excel code yaad kar
+8) Click using JavascriptExecutor
+             WebElement box = driver.findElement(By.xpath("(//textarea)[1]"));
+             JavascriptExecutor js = ((JavascriptExecutor)driver);
+	    String text = "Apple";
+	    js.executeScript("arguments[0].value='"+text+"'", box);
+	    WebElement googleSearch = driver.findElement(By.xpath("(//input[@value='Google Search'])[2]"));
+	    js.executeScript("arguments[0].click()", googleSearch);
+
+9) Type into textbox using JavaScriptExecutor
+10) isEnabled(),isDisplayed(),isSelected() 
+11) How to check element exists on webpage using try catch and driver.findElements();
+12 What is By in selenium 
+                  public abstract class By extends Object
+                  Mechanism used to locate elements within a document
+13) How System.out.println() works internally ? 
+14) Wait for the file download using fluent wait ? 
+15) What is pageLoadTimeout ?
+16) Write screenshot code for selenium ?
+   	  driver.get("https://www.google.com");
+	  File f =  ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); //page
+	  WebElement ele = driver.findElement(By.xpath("(//input[@value='Google Search'])[2]"));
+	  File f =  ele.getScreenshotAs(OutputType.FILE); //single element
+	  String p  =System.getProperty("user.dir");
+	  File f1 = new File(p+"\\index2.png");
+	  FileUtils.copyFile(f, f1);
+		  
+
+   
+17) Explicit wait Polling : //div[@id='finfish']/h4 (tried for 12 second(s) with 500 milliseconds interval) 
+18) The default time for Implicit wait is zero and it keeps polling 
+    for the required element after every 500 milliseconds.
+19) Fluent wait se we can wait for file download naveen automation and we can change polling frequency
+    which we cannot do with implicit & explicit wait there polling frequency was by default 500ms
+20) Put a dot(.) in xpath for parent child 
+    WebElement parent = driver.findElement(By.xpath("//div[@class='LX3sZb']"));
+		parent.findElement(By.xpath(".//*[text()='Sign in']")).click();
+
+
+21) scroll down/up using selenium 
+22)  zoom in and zoom out on chrome in selenium
+23)  Disable css and images for faster execution in selenium
+24) Download File using Fluent wait
+25) Type something in capital letters in textbox using Actions class
+26) Double click(Context Click in selenium)
+27) Perform Ctrl+c and Ctrl+v using selenium
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://register.rediff.com/register/register.php?FormName=user_details");
+		 Actions actions = new Actions(driver);
+		WebElement ele =driver.findElement(By.xpath("//input[@type='text']"));
+		ele.sendKeys("hellosumit");		
+		String key1 = Keys.chord(Keys.CONTROL,"a");
+		String key2 = Keys.chord(Keys.CONTROL,"x"); // or use "c"
+		String key3 = Keys.chord(Keys.CONTROL,"v");
+		//ele.sendKeys(key1);
+		ele.click();
+		ele.sendKeys(key1);
+		ele.sendKeys(key2);
+		WebElement ele2 = driver.findElement(By.xpath("(//input[@type='text'])[2]"));
+		ele2.sendKeys(key3); 
+		
+28) enabled=True ,invocationCount =10 , types of annotation in testNg , IRetryAnalyzer,ItestListner
+29 ) Types of Exceptions in selenium : StaleElement,NullPointer,ElementClickIntercepted,ElementNotInteractable,
+invalidXpath selector,unable to locate element,timeout exception,FileNotFoundException
+30) scroll inside a webElement : use EventFiringWebDriver
+31) IRetryAnalyzer  code yaad kar
+32) SDET QA SELENIUM Framework kar 
+TestNg me patameters and groups tag
+33) driver.get Vs driver.navigate.to()
+34) selenium set browser window sizee
+35) Handle authentication popup selenium
+36) Remove Duplicates from arraylist
+37) Block Location popup selenium ,Allow and Block
+
+ 
+--------------------------------------------- Psuedo elementsCSS ---------------------------------------------------	 
+	driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/register");
+	
+	List<WebElement> elements = driver.findElements(By.xpath("//*[@id='account']//label[starts-with(@for,'input')]"));
+	
+	JavascriptExecutor js = (JavascriptExecutor)driver;
+	
+	
+	for(WebElement ele : elements)
+	{
+		String script = "return window.getComputedStyle(arguments[0],'::Before').getPropertyValue('content')";
+	    String t =js.executeScript(script, ele).toString();
+	    System.out.println(t);
+	}
+
+---------------------------------------------------------------------------------------------------------------------------
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// API Automation 
+1) What is OAuth 2.0 mechanism ? 1.0 vs 2.0
+2) Various http status codes dekh le
+3) Stateless vs stateful
+
+// MY SQL
+1) make a duplicate table from already existing table
+CREATE TABLE new_table AS SELECT * FROM original_table;
+To inherit all table definitions, use the CREATE TABLE... LIKE syntax:
+CREATE TABLE new_table LIKE original_table;
+
+//To insert data : INSERT INTO new_table SELECT * FROM original_table;
+
+
