@@ -1,0 +1,25 @@
+import {test,expect}  from "@playwright/test";
+
+test("get request",async({page,request})=>{
+
+const baseURL = "https://reqres.in";
+ 
+
+ let response = await request.get(`${baseURL}/api/users?page=2`,{
+    headers:
+
+        {"x-api-key": "reqres_a81bc0a42e534a25846c9bdb44b9f0f2"}
+
+
+ });
+
+
+ let datak  = await response.json();
+ 
+  let d = datak.data[0].last_name;
+
+console.log(datak);
+console.log(d);
+console.log(response.status());
+
+})
